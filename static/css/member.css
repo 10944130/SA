@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "Comic Sans MS";
+    letter-spacing: 1.85px;
+}
+
+.container-fluid{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+#head{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    position: fixed;
+    top: 0;
+}
+#content{
+    
+    min-height: calc(100vh - 5rem);
+    background-color: white;
+    margin-top: 5rem;
+}
+
+.container{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+/*menu*/
+.btn-group{
+    display: flex;
+    height: 4rem;
+    width: 7rem;
+    margin-left: 1rem;
+}
+.dropdown-menu.show {
+    display: block;
+    margin-top: 4.2rem;
+}
+.btn-secondary {
+    --bs-btn-color: rgb(0, 0, 0);
+    --bs-btn-bg: #6c757d00;
+    --bs-btn-border-color: #6c757d00;
+    --bs-btn-hover-color: rgb(0, 0, 0);
+    --bs-btn-hover-bg: #3298ff00;
+    --bs-btn-hover-border-color: #565e6400;
+    --bs-btn-focus-shadow-rgb: 130,138,145;
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: #3fa6f400;
+    --bs-btn-active-border-color: #51585e00;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(44, 44, 44, 0.193);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #6c757d;
+    --bs-btn-disabled-border-color: #6c757d;
+}
+.dropdown-menu{
+    --bs-dropdown-link-active-color: #000000;
+    --bs-dropdown-link-active-bg: #6c757d2f;
+}
+.fa-solid{
+    float: right;
+}
+#head::after {
+    position: absolute;
+    top: 4.7rem;
+    left: 0px;
+    content: '';
+    width: 100%;
+    height: 1px;
+    border-radius: 20px;
+    background-color: rgb(185, 185, 185);
+}
+.head-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-regular {
+    font-size: 30px;
+}
+.user,.qa{
+    margin-left: 5px;
+    margin-right: 15px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+}
+/*table--------------------------------------------------------------*/
+/*--------------------------------------------------------------*/
+.row{
+    justify-content: center;
+}
+/*user*/
+.text-center{
+    margin: auto;
+    width: 90px;
+    height: 90px;
+    border-style: solid;
+    border-color: #E6C786;
+    border-radius: 50px;
+}
+.rounded{
+    height: 80px;
+    width: 80px;
+}
+.qrcode{
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.rounded-2{
+    height: 80px;
+    width: auto;
+}
+/*基本信息-----------------------------*/
+.col-10{
+    margin: auto;
+   
+    border-radius: 20px;
+}
+.col-8-2{
+    background-color: #AAB8AB;
+    border-radius: 20px;
+    text-align: left;
+    padding: 15px 20px 15px 20px;
+}
+.form-group{
+    margin-bottom: 10px;
+}
+.custom-select{
+
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.col-a{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    --bs-btn-color: rgb(255, 255, 255);
+    --bs-btn-bg: #000000c1;
+    --bs-btn-border-color: #000000;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: rgba(0, 0, 0, 0.846);
+    --bs-btn-hover-border-color: #1d1d1d;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #000000;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #000000;
+    --bs-btn-disabled-border-color: #000000;
+}

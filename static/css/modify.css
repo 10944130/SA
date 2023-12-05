@@ -1,0 +1,18 @@
+body{
+    background-color: #AAB8AB;
+}
+.container-fluid{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.container{
+    height: max-content;
+    margin: 50% 0 50% 0;
+}
+.col-8{
+    width: 270px;
+}
+.col-8-2{
+    background-color: white;
+}

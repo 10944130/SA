@@ -1,0 +1,50 @@
+h5{
+    font-size: 10px;
+}
+.topp{
+    width: 90%;
+    margin: auto;
+}
+.col-9{
+font-size: 20px;
+}
+.headerr {
+    margin-top: 20px;
+    font-size:25px;
+    text-align:left;
+}
+.row{
+    width: 90%;
+    margin: auto;
+}
+.col-7{
+    margin: auto;
+    text-align:left;
+}
+.pointt{
+    font-size:larger;
+}
+.card-header{
+    text-align:left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.go{
+    margin: auto;
+    background-color: #AAB8AB;
+    border: #AAB8AB;
+    --bs-btn-hover-bg: #606a61;
+    --bs-btn-active-bg: #606a61;
+}
+.topimg{
+    margin: 5px 0 5px 0;
+}
+.progress{
+    margin-bottom: 5px;
+}
+.rowtitle{
+    text-align:left;
+}
+.progress-bar {
+    background-color: #AAB8AB;
+}
