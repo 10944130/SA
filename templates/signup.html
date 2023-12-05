@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番薯國碳制郎</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link href="{% static 'css/signup.css'%}" rel="stylesheet">
+</head>
+<body>
+    {% block main %}
+    <div class="index">
+        <form action="/register/" method="post">
+        {% csrf_token %}
+        <h1>番薯國碳制郎</h1><hr>
+        <input id="IDCARD" type="text" name="IDCARD" class="input" placeholder="帳號(身分證)" required="required">
+        <input id="PHONE" type="text" name="PHONE" class="input" placeholder="手機號碼" required="required">
+        <input id="NAME" type="text" name="NAME" class="input" placeholder="姓名" required="required">
+        <input id="PASSWORD" type="text" name="PASSWORD" class="input" placeholder="密碼" required="required">
+        <input id="NICKNAME" type="text" name="NICKNAME" class="input" placeholder="暱稱" required="required">
+        <input id="Invitation" type="text" name="Invitation" class="input" placeholder="輸入邀請碼(非必填) ">
+        <a href="/signin/" class="next"><button type="submit">送出</button></a><br>
+        <a href="/signin/" style="font-size: 15px; text-decoration: underline;">已有帳號？</a>
+        </form>
+        {% if messages %}
+        {% for message in messages %}
+        <div {% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: red;font-size: 18px;">
+            {{ message }}
+        </div>
+            {% endfor %}
+            {% endif %}
+    </div>
+    {% endblock %}
+</body>
+</html>

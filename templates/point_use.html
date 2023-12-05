@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  {% load static %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link href="{% static 'css/point_use.css'%}" rel="stylesheet">
+  <link href="{% static 'css/table.css'%}" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="https://kit.fontawesome.com/fbfcc130e9.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
+  <!---fixtop-->
+
+  <div class="container-fluid">
+    <div id="head" style="z-index: 100;position: fixed;height: 4.7rem;">
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static"
+          aria-expanded="false">
+          <span style="font-size: 30px;">碳制郎</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+          <a href="#"><button class="dropdown-item" type="button">集點<i class="fa-solid fa-feather-pointed"
+                style="line-height: 1.5rem;"></i></button></a>
+          <a href="/rank/"><button class="dropdown-item" type="button">排行榜<i class="fa-solid fa-ranking-star"
+                style="line-height: 1.3rem;"></i></button></a>
+          <a href="/point_use/"><button class="dropdown-item" type="button">兌換<i
+                class="fa-sharp fa-solid fa-bag-shopping" style="line-height: 1.4rem;"></i></button></a>
+          <a href="/C_usehistory/"><button class="dropdown-item" type="button">碳權存摺<i class="fa-sharp fa-solid fa-book"
+                style="line-height: 1.5rem;"></i></button></a>
+        </div>
+      </div>
+      <div class="head-right">
+        <div class="user">
+          <a class="nav-link" href="/member/">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </div>
+        <div class="qa">
+          <a class="nav-link" href="/qa/">
+            <i class="fa-regular fa-circle-question"></i>
+          </a>
+        </div>
+        <div class="user">
+          <a class="nav-link" href="/page/">
+              <i class="fa-solid fa-house" style="font-size: 30px;"></i>
+          </a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="content" style="min-height: calc(100vh - 5rem);margin-top: 0rem;">
+    <div class="card mb-3" style="flex-direction: column;text-align: center;background-color: #e4e4e4;">
+      <p style="margin: 0px 0px 5px 0px; ">{{user_NickName}} 您的累積點數</p>
+      <p style="margin: 0px 0px 5px 0px; font-size: 34px; font-weight: bold;">{{ members.POINT }}點</p>
+    </div>
+    <p style="text-align: center;">NEW ARRIVAL <i class="fa-sharp fa-solid fa-bag-shopping"
+        style="line-height: 1.4rem; float: none;"></i></p>
+    <form id='myform' method='get' action='/userbuy/' style="display: flex;flex-direction: column;
+    align-items: center;">
+      {% csrf_token %}
+      {% for REWARD in r %}
+      <!--<div class="card mb-3">
+        <div class="row">
+          <div class="col-5">
+            <img src="/{{REWARD.R_IMG}}" class="img-fluid col-5-1" alt="...">
+          </div>
+
+          <div class="card-body col-7">
+
+            <div class="card-title col-12 "><b>{{REWARD.R_NAME}}</b></div>
+            <input type="hidden" value="{{REWARD.R_NAME}}" name="pname">
+            <div class="card-title col-12">所需點數:{{REWARD.COSTPOINT}}/{{REWARD.ALERT}}</div>
+            <input type="hidden" value="{{REWARD.COSTPOINT}}" name="pex">
+            <input type="hidden" value="{{REWARD.ALERT}}" name="palert">
+
+          -->
+      <!--<label for="">數量: </label><input type='button' value='-' class='qtyminus' field='quantity' />
+                <input type='text' name='quantity' id='quantity' value='1' class='qty' readonly
+              style="width: 30px; text-align: center;" />
+                <input type='button' value='+' class='qtyplus' field='quantity' /> -->
+      <!--
+            <input type="submit" class="insidebtn" style="width: 90%;" value="兌換">
+
+
+          </div>
+        </div>
+      </div>-->
+      <div class="card" style="width: 18rem; display: flex;align-items: center; margin-bottom: 20px;">
+
+
+        <img src="/{{REWARD.R_IMG}}" class="img-fluid col-5-1" alt="...">
+
+        <div class="card-body" style="text-align: left; width: 80%;">
+          <h5 class="card-title">{{REWARD.R_NAME}}</h5>
+          <input type="hidden" value="{{REWARD.R_NAME}}" name="pname">
+          <p class="card-text">{{REWARD.R_CONTENT}}<br>所需點數:{{REWARD.COSTPOINT}}/{{REWARD.ALERT}}</p>
+          <input type="hidden" value="{{REWARD.COSTPOINT}}" name="pex">
+          <input type="hidden" value="{{REWARD.ALERT}}" name="palert">
+          <input type="submit" class="insidebtn" style="width: 100%;" value="兌換">
+        </div>
+
+      </div>
+      {% endfor %}
+    </form>
+
+
+  </div>
+</body>
+
+</html>

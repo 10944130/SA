@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/member.css'%}">
+    <link rel="stylesheet" href="{% static 'css/table.css'%}">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="head" style="z-index: 100;position: fixed;">
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    data-display="static" aria-expanded="false">
+                    <span style="font-size: 30px;">碳制郎</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                    <a href="#"><button class="dropdown-item" type="button">集點<i class="fa-solid fa-feather-pointed"
+                                style="line-height: 1.5rem;"></i></button></a>
+                    <a href="/rank/"><button class="dropdown-item" type="button">排行榜<i class="fa-solid fa-ranking-star"
+                                style="line-height: 1.3rem;"></i></button></a>
+                    <a href="/point_use/"><button class="dropdown-item" type="button">兌換<i
+                                class="fa-sharp fa-solid fa-bag-shopping" style="line-height: 1.4rem;"></i></button></a>
+                    <a href="/C_usehistory/"><button class="dropdown-item" type="button">碳權存摺<i
+                                class="fa-sharp fa-solid fa-book" style="line-height: 1.5rem;"></i></button></a>
+                </div>
+            </div>
+            <div class="head-right">
+                <div class="user">
+                    <a class="nav-link" href="/member/">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </div>
+                <div class="qa">
+                    <a class="nav-link" href="/qa/">
+                        <i class="fa-regular fa-circle-question"></i>
+                    </a>
+                </div>
+                <div class="user">
+                    <a class="nav-link" href="/page/">
+                        <i class="fa-solid fa-house" style="font-size: 30px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="overflow-hidden" id="content">
+            <div class="container" style="z-index: 1;position: relative;">
+                <div class="row justify-content-lg-center">
+                    <div class="col col-md-2">
+                        
+
+                        <div class="col">
+                            <img src="{{user_PictureUrl}}" class="rounded" alt="大頭貼">
+                        </div>
+
+                        <div class="col">
+                            <h3>{{user_Name}}</h3>
+                        </div>
+                        <div class="col">
+                            <h5>{{members.POINT}}點</h5>
+                        </div>
+                        <div class="qrcode">
+                            <img src="{% static 'images/qrcode.jpg' %}" class="rounded-2" alt="大頭貼">
+                        </div>
+                    </div>
+                    <div class="col-lx-auto">
+                        <div class="col-10">
+                            <form action="/change/" method="post">
+                                {% csrf_token %}
+                                <div class="col-8-2">
+                                    <h5>🌿基本信息🌿</h5>
+                                    <div class="form-group">
+                                        <label for="exampleInputNickname">暱稱</label>
+                                        <div class="input-group mb-2 mr-sm-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">✎</div>
+                                            </div>
+                                            <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                                                value="{{user_NickName}}" name="newNICKNAME" readonly>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputPhone">電話</label>
+                                        <input type="text" class="form-control" name="PHONE" id="validationDefault02"
+                                            value="{{user_Phone}}" readonly>
+                                        <small id="phoneHelp" class="form-text text-muted">我們不會將您的電話號碼洩漏給任何人!</small>
+                                    </div>
+
+
+                                </div>
+                                
+                                <div class="col-a">
+                                    <a href="/loginpage/" class="btn btn-primary">登出</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/fbfcc130e9.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
